@@ -6,26 +6,23 @@ public class zad2 {
 		{
 			System.out.println("for");
 			int i;
-			double j,g;
-		for(i=25, j=25.5, g=24.8; i<=35; i++,j++,g++, System.out.println())
-			System.out.printf("%d %.1f %.1f", i,j,g);
+		for(i=25; i<=35; i++, System.out.println())
+			System.out.printf("%d %.1f %.1f", i,i+0.5,i-0.2);
 		}
 		int i=25;
-		double j=25.5,g=24.8;
 		System.out.println("while");
 		while(i<=35){
-			System.out.printf("%d %.1f %.1f", i,j,g);
+			System.out.printf("%d %.1f %.1f", i,i+0.5,i-0.2);
 			System.out.println();
-		i++;j++;g++;
+		i++;
 		}
 			System.out.println("do while");
 			i=25;
-			j=25.5;g=24.8;
 			do
 			{
-				System.out.printf("%d %.1f %.1f", i,j,g);
+				System.out.printf("%d %.1f %.1f", i,i+0.5,i-0.2);
 				System.out.println();
-				i++;j++;g++;
+				i++;
 			}
 			while(i<=35);
 			}

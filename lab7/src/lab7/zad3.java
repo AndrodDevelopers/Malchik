@@ -14,19 +14,19 @@ public class zad3 {
 		{
 		for (float x=b;x>=a; x--)
 		{ 
-			System.out.println(" "+ x*x*x);
+			System.out.println(" "+ Math.pow(x, 3));
 		} 
 		System.out.println("while");
 		float y=b;
 		while (y>=a)
 		{
-			System.out.println(" "+ y*y*y);
+			System.out.println(" "+ Math.pow(y, 3));
 			y--;
 		}
 		System.out.println("do while");
 		do
 		{
-		System.out.println(" "+ b*b*b);
+		System.out.println(" "+ Math.pow(b, 3));
 		b--;
 		}
 		while (b>=a);
