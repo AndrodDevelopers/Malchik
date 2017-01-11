@@ -74,14 +74,93 @@ public class zada4a3 {
 	}
 	static void Change5(int[][] a)
 	{
-		int x=0;
+		int k=0;
 		for (int i=0; i<a.length;i++)
+			for (int j=0;j<a.length/2;j++)
+			{
+				k=a[i][j];
+				a[i][j]=a[i][a.length-j-1];
+				a[i][a.length-j-1]=k;
+			}
+	}
+	static void Change6(int[][] a)
+	{
+		int k=0;
+		for (int i=0;i<a.length/2;i++)
 			for (int j=0;j<a.length;j++)
 			{
-				x=a[i][j];
-				a[i][j]=a[i][(a.length-1)-j];
-				a[i][(a.length-1)-j]=x;
+				k=a[i][j];
+				a[i][j]=a[a.length-i-1][j];
+				a[a.length-i-1][j]=k;
 			}
+	}
+	static void Change7(int[][] a)
+	{
+		for (int i=0;i<a.length;i++)
+		{
+			if (i==0 & i%2==0)
+			{
+				for (int j=0;j<a.length;j++)
+				{
+					System.out.print(" "+a[i][j]);
+				}
+			}
+			else {for (int j=0;j<a.length;j++)
+				System.out.print(" "+a[i][a.length-j-1]);
+			}
+		}
+	}
+	static void Change8(int[][] a)
+	{
+		int t=0;
+		int max= a[0][0];
+		for (int i=0;i<a.length;i++)
+		{
+			for (int j=0; j<a.length; j++)
+			{
+				if (max <= a[i][j])
+				{
+					t=j;
+					max=a[i][j];
+				}
+				
+			}
+			a[i][t]=-a[i][t];
+		}
+	}
+	static void Change9(int[][] a)
+	{	
+		int t=0;
+		int s=0;
+		int min= a[0][0];
+		for (int i=0; i<a.length;i++)
+		{
+			for (int j=0;j<a.length;j++)
+			{
+				if (min >= a[j][i])
+				{
+					s=i;
+					t=j;
+					min=a[j][i];
+				}
+			}
+			a[t][s]=0;
+		}
+	}
+	static void Change10(int[][] a)
+	{
+		System.out.println("Opredelit est li v dannom massive stroka tolko iz polojitelnih elementov ");
+		int col=0;
+		for (int i=0;i<a.length;i++)
+		{
+			for (int j=0;j<a.length;j++)
+			{
+				if (a[i][j]>0) col+=1;
+			}
+			if (col==a.length) 
+				{System.out.println("Est");col=0;}
+			else {System.out.println("Nety");}
+		}
 	}
 	public static void main(String[] args) {
 		in=new Scanner(System.in);
@@ -121,7 +200,7 @@ public class zada4a3 {
 			Print(a);
 		}
 		break;
-		/*case 6:
+		case 6:
 		{
 			Change6(a);
 			Print(a);
@@ -130,7 +209,6 @@ public class zada4a3 {
 		case 7:
 		{
 			Change7(a);
-			Print(a);
 		}
 		break;
 		case 8:
@@ -150,7 +228,7 @@ public class zada4a3 {
 			Change10(a);
 			Print(a);
 		}
-		break;*/
+		break;
 		}
 	}
 
