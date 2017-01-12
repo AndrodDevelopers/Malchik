@@ -20,23 +20,33 @@ public class zada4a1 {
 		}
 		static void Change1(int [][] a)
 		{
+			int max=a[0][0];
 			for (int i=0;i<a.length;i++)
 			{
 				for (int j=0;j<=a.length;j++)
 				{
-					if ( )
+					if ((j>=i && j<=a.length-i-1) || (i>=j && j>=a.length-i-1))
+					{
+						if (a[i][j]>max) max=a[i][j];							
+					}
 				}
 			}
+			System.out.println("maximalniy element= " + max);
 		}
 		static void Change2(int[][] a)
 		{
+			int sum=0;
 			for (int i=0;i<a.length;i++)
 			{
 				for (int j=0;j<a.length;j++)
 				{
-					if ()
+					if ((j<=i && j<=a.length-i-1) || (j>=i && j>=a.length-i-1))
+					{
+						sum+=a[i][j];
+					}
 				}
 			}
+			System.out.println("Summa elementov ravna= " + sum);
 		}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -46,7 +56,7 @@ public class zada4a1 {
 		int [][] a=new int[n][n]; 
 		Massiv(a);
 		Print(a);
-		System.out.print("(1-10)= ");
+		System.out.print("(1-2)= ");
 		int z=in.nextInt();
 		switch (z)
 		{
